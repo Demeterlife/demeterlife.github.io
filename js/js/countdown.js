@@ -62,7 +62,6 @@ var fnTimeCountDown = function(d, o){
                 o.mini.innerHTML = f.dv().mini;
             }
             if(o.hour){
-                console.log(f.dv().hour);
                 o.hour.innerHTML = f.dv().hour;
             }
             if(o.day){
