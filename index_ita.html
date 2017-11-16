@@ -961,7 +961,7 @@
                 width: 500px;
             }
         }
-        @media screen and (min-width: 1920px) {
+        @media screen and (min-width: 1918px) {
             .animation-content{
                 left: 25%;
                 position: absolute;
@@ -1779,7 +1779,7 @@ La nostra piattaforma punta a portare il  mondo ad un nuovo livello di sostenibi
         }
         return text;
     };
-
+    var now =new Date();
     var zxx = {
         $: function (id) {
             return document.getElementById(id);
@@ -1795,6 +1795,7 @@ La nostra piattaforma punta a portare il  mondo ad un nuovo livello di sostenibi
             }
         }
     };
+    var offsetMs= 0 - (now.getTimezoneOffset()*60*1000);
     fnTimeCountDown(zxx.futureDate, zxx.obj());
 </script>
 </body>

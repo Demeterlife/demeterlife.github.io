@@ -37,9 +37,10 @@ var fnTimeCountDown = function(d, o){
         },
         dv: function(){
             d = d || Date.UTC(2050, 0, 1); //如果未定义时间，则我们设定倒计时日期是2050年1月1日
-            var future = new Date(d), now = new Date();
+            var now =new Date();
+            var future = new Date(d);
             //现在将来秒差值
-            var dur = Math.round((future.getTime() - now.getTime()) / 1000) + future.getTimezoneOffset() * 60, pms = {
+            var dur = Math.round((future.getTime() - now.getTime()) / 1000), pms = {
                 sec: "00",
                 mini: "00",
                 hour: "00",
