@@ -828,10 +828,23 @@
             .ubermenu-item:hover > .ubermenu-submenu-drop{
                 text-align: left!important;
             }
+            .ether-addr-con{
+                border: 1px solid #000;margin:0;padding: 0;margin-top: 20px;font-size: 24px;
+                word-wrap: break-word;
+            }
+            #ethaddress{
+                width: 194px;
+            }
         }
         @media screen and  (min-width: 360px) {
             .modal-video-close-btn{
                 right: 160px;
+            }
+            .ether-addr-con{
+                font-size: 27px;
+            }
+            #ethaddress {
+                width: 228px;
             }
         }
         @media screen and  (min-width: 375px) {
@@ -850,10 +863,22 @@
             .modal-video-close-btn{
                 right: 170px;
             }
+            .ether-addr-con{
+                font-size: 28px;
+            }
+            #ethaddress {
+                width: 240px;
+            }
         }
         @media screen and  (min-width: 412px) {
             .modal-video-close-btn{
                 right: 185px;
+            }
+            .ether-addr-con {
+                font-size: 31px;
+            }
+            #ethaddress {
+                width: 270px;
             }
         }
         @media screen and  (min-width: 414px) {
@@ -868,6 +893,12 @@
             }
             .modal-video-close-btn{
                 right: 185px;
+            }
+            .ether-addr-con {
+                font-size: 32px;
+            }
+            #ethaddress {
+                width: 275px;
             }
         }
         @media screen and  (min-width: 480px) {
@@ -921,6 +952,12 @@
             }
             .join-the-crowdsale{
                 font-size: 26px!important;
+            }
+            .ether-addr-con {
+                font-size: 38px;
+            }
+            #ethaddress {
+                width: 350px;
             }
         }
 
@@ -984,6 +1021,14 @@
             .join-the-crowdsale{
                 font-size: 32px;
             }
+            .ether-addr-con{
+                border: 1px solid #000;margin:0;padding: 0;margin-top: 20px;
+                word-wrap: normal;
+                font-size: 26px;
+            }
+            #ethaddress{
+                width:500px;
+            }
         }
         @media screen and (min-width: 1280px) {
             .x-brand {
@@ -997,6 +1042,12 @@
                 left: 12.5%;
                 position: absolute;
                 top: 120px;
+            }
+            .ether-addr-con{
+                font-size: 29px;
+            }
+            #ethaddress {
+                width: 565px;
             }
         }
         @media screen and (min-width: 1366px) {
@@ -1033,6 +1084,12 @@
             .join-the-crowdsale{
                 font-size: 32px;
             }
+            .ether-addr-con{
+                font-size: 29px;
+            }
+            #ethaddress {
+                width: 565px;
+            }
         }
         @media screen and (min-width: 1918px) {
             .animation-content{
@@ -1042,6 +1099,14 @@
             }
             .join-the-crowdsale{
                 font-size: 32px;
+            }
+            .ether-addr-con{
+                border: 1px solid #000;margin:0;padding: 0;margin-top: 20px;
+                word-wrap: normal;
+                font-size: 26px;
+            }
+            #ethaddress{
+                width:450px;
             }
         }
     </style>
@@ -1757,13 +1822,13 @@ La nostra piattaforma punta a portare il  mondo ad un nuovo livello di sostenibi
 
                                         <div id="token-sale-address-box" class="token-sale-address-box" style="display:none;">
                                             <div style="text-align: left"><h5 style="padding: 0;">Indirizzo per partecipare alla ICO di Demeter:</h5></div>
-                                            <div><h4 style="border: 1px solid #000;margin:0;padding: 0;margin-top: 20px;font-size: 29px;">0xB8Eb17dfa4ec9A6457e4c8FB3D724C0Ed9ba4CF0</h4></div>
+                                            <div><h4 class="ether-addr-con">0xB8Eb17dfa4ec9A6457e4c8FB3D724C0Ed9ba4CF0</h4></div>
                                             <div style="text-align:left;color: #ff0000;font-size: 14px;margin-top: 20px;"><strong>Se non sei sicuro su come partecipare o vuoi scoprire come diventare whitelisted di secondo livello, segui questa <a target="_blank" style="color:#A1C860;" href="static/uploads/it-payment-guide.pdf">Guida</a></strong></div>
                                             <div style="text-align: left;">
                                                 <div style="text-align: left;">
                                                     <div style="margin-top: 20px;"><h6 style="color:#7a7a7a;text-transform: none;letter-spacing:normal;"><strong>Controlla se sei Whitelisted</strong></h6></div>
                                                     <div style="text-align: left;">
-                                                        <span style="display:inline-block;"><input type="text" name="ethadderss" value="" placeholder="Inserisci il tuo indirizzo ETH" id="ethaddress" style="margin-top:0px;width:450px;"></span>
+                                                        <span style="display:inline-block;"><input type="text" name="ethadderss" value="" placeholder="Inserisci il tuo indirizzo ETH" id="ethaddress" style="margin-top:0px;"></span>
                                                         <span style="display: inline-block;"><a id="ethaddress-check-btn" class="x-btn x-btn-flat x-btn-square x-btn-global"
                                                                                                 style="text-align: center;margin-top: -10px;padding: 4px 12px;background: #A1C860;border: 2px solid #A1C860;"
                                                                                                 href="javascript:;" data-options="thumbnail: ''">Invia</a></span>
@@ -1985,6 +2050,10 @@ La nostra piattaforma punta a portare il  mondo ad un nuovo livello di sostenibi
 //            }
 //        }
 //    });
+//    jQuery("#menu-item-640").touch(function () {
+//        jQuery("#menu-item-649").css("margin-top","38px");
+//    });
+
     jQuery("#video-link").YouTubePopUp();
     document.getElementsByClassName('preregbtn').onclick = function (e) {
         e.preventDefault();
