@@ -2147,6 +2147,10 @@ Our platform puts the world to a next level of sustainable agriculture.</span></
     jQuery("#ethaddress-check-btn").click(function () {
         var infoObj=jQuery("#ethaddress-check-info");
         var ethaddress=jQuery("#ethaddress").val();
+        if(ethaddress===""){
+            infoObj.empty().html("Please insert your ETH address!");
+            return;
+        }
 //        var reqData={"jsonrpc":"2.0","id":5,"method":"eth_call","params":[{"to":"0x07C3a6fDfbFB204155C0970ddCa0cEf2EDde41A7","data":"0xf0bc6cfb000000000000000000000000dc47494e7b58e0c8845ae0670f7647bed621eb18"},"latest"]};
 //        jQuery.ajax({
 //            type: 'POST',
