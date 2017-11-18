@@ -2046,15 +2046,6 @@ Our platform puts the world to a next level of sustainable agriculture.</span></
         uschckbx = document.getElementById('US-checkbox2'),
         licensebx = document.getElementById('license-checkbox'),
         ussitizen = !0;
-//    jQuery.getJSON('https://freegeoip.net/json/', function (t) {
-//        if (t.country_code != 'US') {
-//            ussitizen = !1;
-//            for (var e = 0; e < buttons.length; e++) {
-//                buttons[e].disabled = !1;
-//                mailfields[e].placeholder = 'john.smith@example.com'
-//            }
-//        }
-//    });
     jQuery("#video-link").YouTubePopUp();
     document.getElementsByClassName('preregbtn').onclick = function (e) {
         e.preventDefault();
@@ -2063,7 +2054,6 @@ Our platform puts the world to a next level of sustainable agriculture.</span></
             t.focus()
         }
         else if (ussitizen && uschckbx.checked) {
-//            preregisterbtn.text = 'Sorry! US citizens are not allowed...'
         }
     };
 
@@ -2089,7 +2079,6 @@ Our platform puts the world to a next level of sustainable agriculture.</span></
             jqForm.find('.clear').css('margin-left','55px');
             return false;
         }
-//        jqForm.find('.random-code').val(randomString(8));
         if(jqForm.find('.email').val()===''){
             return false;
         }else if (!/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(jqForm.find('.email').val())){
@@ -2128,22 +2117,16 @@ Our platform puts the world to a next level of sustainable agriculture.</span></
             }
         }
     };
-//    var offsetMs= 0 - (now.getTimezoneOffset()*60*1000);
     fnTimeCountDown(zxx.futureDate, zxx.obj());
-
     var web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/VnYIECsOn4VTw3b75pIm"));
     var version = web3.version.api;
-//    jQuery.getJSON('https://ropsten.etherscan.io/api?module=account&action=balance&address=0xB8Eb17dfa4ec9A6457e4c8FB3D724C0Ed9ba4CF0&tag=latest&apikey=5C5QN8VHDEKTXJ7H7DZC4B2F5NB4CXWYNB', function (data) {
     jQuery.getJSON('https://api.etherscan.io/api?module=account&action=balance&address=0xB8Eb17dfa4ec9A6457e4c8FB3D724C0Ed9ba4CF0&tag=latest&apikey=5C5QN8VHDEKTXJ7H7DZC4B2F5NB4CXWYNB', function (data) {
         var contractABI = "";
-//        console.log("-----eth callback----");
-//        console.log(data);
         x = new BigNumber(data.result);
         y=1000000000000000000;
         x2=x.dividedBy(y);
         jQuery("#total-raised").empty().html(x2.toFixed(2).toString());
     });
-//    var jrpc = new simple_jsonrpc();
     jQuery("#ethaddress-check-btn").click(function () {
         var infoObj=jQuery("#ethaddress-check-info");
         var ethaddress=jQuery("#ethaddress").val();
@@ -2151,58 +2134,28 @@ Our platform puts the world to a next level of sustainable agriculture.</span></
             infoObj.empty().html("Please insert your ETH address!");
             return;
         }
-//        var reqData={"jsonrpc":"2.0","id":5,"method":"eth_call","params":[{"to":"0x07C3a6fDfbFB204155C0970ddCa0cEf2EDde41A7","data":"0xf0bc6cfb000000000000000000000000dc47494e7b58e0c8845ae0670f7647bed621eb18"},"latest"]};
-//        jQuery.ajax({
-//            type: 'POST',
-//            data:JSON.stringify(reqData),
-//            contentType: "application/json; charset=utf-8",
-//            url: 'https://ropsten.infura.io/VnYIECsOn4VTw3b75pIm',
-//            dataType: 'json',
-//            success: function (data) {
-//                console.log(data);
-//                var decode=web3.toAscii(data.result);
-//                console.log(decode);
-//            }
-//        });
-//        jQuery.getJSON('https://api.etherscan.io/api?module=contract&action=getabi&address=0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413&apikey=5C5QN8VHDEKTXJ7H7DZC4B2F5NB4CXWYNB', function (data) {
-
-//            if(data.status==="1"){
-                var contractABI = "";
-                try{
-//                    var demeterLifeAbiSource='[{"constant":true,"inputs":[],"name":"PERC_TOKENS_TO_RELEASE","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"rate","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"DEV_WALLET","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_goal","type":"uint256"}],"name":"updateGoal","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"endTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"cap","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"PERC_TOKENS_TO_INVESTOR","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"unpause","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"goal","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"weiRaised","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"PERC_TOKENS_TO_BIZDEV","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"finalize","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"BIZDEV_WALLET","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"wallet","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"paused","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"isWhiteListed","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"whiteListRegistrationEndTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"startTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"goalReached","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"destroy","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"pause","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"isFinalized","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"RELEASE_WALLET","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"WHITELIST_BONUS_RATE","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"claimRefund","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"PERC_TOKENS_TO_DEV","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_referralCode","type":"string"},{"name":"_referredInvestor","type":"address"}],"name":"addReferredInvestor","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"whiteListEndTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_investor","type":"address"},{"name":"_referralCode","type":"string"}],"name":"addWhiteListedInvestor","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_investors","type":"address[]"},{"name":"_referralCodes","type":"bytes32[]"}],"name":"loadWhiteList","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_beneficiary","type":"address"}],"name":"buyTokens","outputs":[],"payable":true,"type":"function"},{"constant":true,"inputs":[],"name":"hasEnded","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_investor","type":"address"}],"name":"isReferred","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_recipient","type":"address"}],"name":"destroyAndSend","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"vault","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"token","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"inputs":[{"name":"_startTime","type":"uint256"},{"name":"_endTime","type":"uint256"},{"name":"_whiteListRegistrationEndTime","type":"uint256"},{"name":"_whiteListEndTime","type":"uint256"},{"name":"_rate","type":"uint256"},{"name":"_cap","type":"uint256"},{"name":"_goal","type":"uint256"},{"name":"_wallet","type":"address"}],"payable":false,"type":"constructor"},{"payable":true,"type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"investor","type":"address"},{"indexed":false,"name":"value","type":"uint256"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"CompanyTokensIssued","type":"event"},{"anonymous":false,"inputs":[],"name":"Pause","type":"event"},{"anonymous":false,"inputs":[],"name":"Unpause","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"investor","type":"address"},{"indexed":false,"name":"referralCode","type":"string"}],"name":"WhiteListedInvestorAdded","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"referralCode","type":"string"},{"indexed":false,"name":"referredInvestor","type":"address"}],"name":"ReferredInvestorAdded","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"beneficiary","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"ReferredBonusTokensEmitted","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"beneficiary","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"WhiteListBonusTokensEmitted","type":"event"},{"anonymous":false,"inputs":[],"name":"Finalized","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"previousOwner","type":"address"},{"indexed":true,"name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"purchaser","type":"address"},{"indexed":true,"name":"beneficiary","type":"address"},{"indexed":false,"name":"value","type":"uint256"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"TokenPurchase","type":"event"}]';
-                    var demeterLifeAbiSource='[{"constant":true,"inputs":[],"name":"PERC_TOKENS_TO_RELEASE","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"rate","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"DEV_WALLET","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_goal","type":"uint256"}],"name":"updateGoal","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"endTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"cap","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"PERC_TOKENS_TO_INVESTOR","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"unpause","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"goal","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"weiRaised","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"PERC_TOKENS_TO_BIZDEV","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"finalize","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"BIZDEV_WALLET","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"wallet","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"paused","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_referralCodes","type":"bytes32[]"},{"name":"_investors","type":"address[]"}],"name":"loadReferredInvestors","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"isWhiteListed","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"whiteListRegistrationEndTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"startTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"goalReached","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"destroy","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"pause","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"isFinalized","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"RELEASE_WALLET","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"REFERRAL_SHARE_RATE","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"WHITELIST_BONUS_RATE","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"claimRefund","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"PERC_TOKENS_TO_DEV","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_referralCode","type":"string"},{"name":"_referredInvestor","type":"address"}],"name":"addReferredInvestor","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"whiteListEndTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_investor","type":"address"},{"name":"_referralCode","type":"string"}],"name":"addWhiteListedInvestor","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_investors","type":"address[]"},{"name":"_referralCodes","type":"bytes32[]"}],"name":"loadWhiteList","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_beneficiary","type":"address"}],"name":"buyTokens","outputs":[],"payable":true,"type":"function"},{"constant":true,"inputs":[],"name":"hasEnded","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_investor","type":"address"}],"name":"isReferred","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_recipient","type":"address"}],"name":"destroyAndSend","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"vault","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"token","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"inputs":[{"name":"_startTime","type":"uint256"},{"name":"_endTime","type":"uint256"},{"name":"_whiteListRegistrationEndTime","type":"uint256"},{"name":"_whiteListEndTime","type":"uint256"},{"name":"_rate","type":"uint256"},{"name":"_cap","type":"uint256"},{"name":"_goal","type":"uint256"},{"name":"_wallet","type":"address"}],"payable":false,"type":"constructor"},{"payable":true,"type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"investor","type":"address"},{"indexed":false,"name":"value","type":"uint256"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"CompanyTokensIssued","type":"event"},{"anonymous":false,"inputs":[],"name":"Pause","type":"event"},{"anonymous":false,"inputs":[],"name":"Unpause","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"investor","type":"address"},{"indexed":false,"name":"referralCode","type":"string"}],"name":"WhiteListedInvestorAdded","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"referralCode","type":"string"},{"indexed":false,"name":"referredInvestor","type":"address"}],"name":"ReferredInvestorAdded","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"beneficiary","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"ReferredBonusTokensEmitted","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"beneficiary","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"WhiteListBonusTokensEmitted","type":"event"},{"anonymous":false,"inputs":[],"name":"Finalized","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"previousOwner","type":"address"},{"indexed":true,"name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"purchaser","type":"address"},{"indexed":true,"name":"beneficiary","type":"address"},{"indexed":false,"name":"value","type":"uint256"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"TokenPurchase","type":"event"}]';
-//                    contractABI = JSON.parse(data.result);
-                    contractABI = JSON.parse(demeterLifeAbiSource);
-                    console.log(contractABI);
-                    if (contractABI != ''){
-                        var MyContract = web3.eth.contract(contractABI);
-                        //demeterlife contract address,need change it
-//                        var myContractInstance = MyContract.at("0x07C3a6fDfbFB204155C0970ddCa0cEf2EDde41A7");
-                        var myContractInstance = MyContract.at('0xB8Eb17dfa4ec9A6457e4c8FB3D724C0Ed9ba4CF0');
-                        var isWhitelisted = eval(myContractInstance.isWhiteListed(ethaddress));
-                        var isReferred = eval(myContractInstance.isReferred(ethaddress));
-                        if(isWhitelisted){
-                            infoObj.empty().html("Congratulation you are 1st level whitelisted!");
-                        }else if(isReferred){
-                            infoObj.empty().html("Congratulation you are 2nd level whitelisted!");
-                        }else{
-                            infoObj.empty().html("Sorry you are not whitelisted!");
-                        }
-//                       var result1= formatresult(isReferred.toString(),'bool');
-//                       var result2= formatresult(isWhitelisted.toString(),'bool');
-//                        console.log(result1);
-//                        console.log(result2);
-                    } else {
-                        infoObj.empty().html("Check the contract has error occured!");
-                    }
-                }catch(e){
-                    console.log(e.toString());
-                    infoObj.empty().html("Sorry you are not whitelisted");
+        var contractABI = "";
+        try{
+            var demeterLifeAbiSource='[{"constant":true,"inputs":[],"name":"PERC_TOKENS_TO_RELEASE","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"rate","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"DEV_WALLET","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_goal","type":"uint256"}],"name":"updateGoal","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"endTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"cap","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"PERC_TOKENS_TO_INVESTOR","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"unpause","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"goal","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"weiRaised","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"PERC_TOKENS_TO_BIZDEV","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"finalize","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"BIZDEV_WALLET","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"wallet","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"paused","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_referralCodes","type":"bytes32[]"},{"name":"_investors","type":"address[]"}],"name":"loadReferredInvestors","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"isWhiteListed","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"whiteListRegistrationEndTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"startTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"goalReached","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"destroy","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"pause","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"isFinalized","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"RELEASE_WALLET","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"REFERRAL_SHARE_RATE","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"WHITELIST_BONUS_RATE","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"claimRefund","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"PERC_TOKENS_TO_DEV","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_referralCode","type":"string"},{"name":"_referredInvestor","type":"address"}],"name":"addReferredInvestor","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"whiteListEndTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_investor","type":"address"},{"name":"_referralCode","type":"string"}],"name":"addWhiteListedInvestor","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_investors","type":"address[]"},{"name":"_referralCodes","type":"bytes32[]"}],"name":"loadWhiteList","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_beneficiary","type":"address"}],"name":"buyTokens","outputs":[],"payable":true,"type":"function"},{"constant":true,"inputs":[],"name":"hasEnded","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_investor","type":"address"}],"name":"isReferred","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_recipient","type":"address"}],"name":"destroyAndSend","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"vault","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"token","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"inputs":[{"name":"_startTime","type":"uint256"},{"name":"_endTime","type":"uint256"},{"name":"_whiteListRegistrationEndTime","type":"uint256"},{"name":"_whiteListEndTime","type":"uint256"},{"name":"_rate","type":"uint256"},{"name":"_cap","type":"uint256"},{"name":"_goal","type":"uint256"},{"name":"_wallet","type":"address"}],"payable":false,"type":"constructor"},{"payable":true,"type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"investor","type":"address"},{"indexed":false,"name":"value","type":"uint256"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"CompanyTokensIssued","type":"event"},{"anonymous":false,"inputs":[],"name":"Pause","type":"event"},{"anonymous":false,"inputs":[],"name":"Unpause","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"investor","type":"address"},{"indexed":false,"name":"referralCode","type":"string"}],"name":"WhiteListedInvestorAdded","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"referralCode","type":"string"},{"indexed":false,"name":"referredInvestor","type":"address"}],"name":"ReferredInvestorAdded","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"beneficiary","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"ReferredBonusTokensEmitted","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"beneficiary","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"WhiteListBonusTokensEmitted","type":"event"},{"anonymous":false,"inputs":[],"name":"Finalized","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"previousOwner","type":"address"},{"indexed":true,"name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"purchaser","type":"address"},{"indexed":true,"name":"beneficiary","type":"address"},{"indexed":false,"name":"value","type":"uint256"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"TokenPurchase","type":"event"}]';
+            contractABI = JSON.parse(demeterLifeAbiSource);
+            if (contractABI != ''){
+                var MyContract = web3.eth.contract(contractABI);
+                var myContractInstance = MyContract.at('0xB8Eb17dfa4ec9A6457e4c8FB3D724C0Ed9ba4CF0');
+                var isWhitelisted = eval(myContractInstance.isWhiteListed(ethaddress));
+                var isReferred = eval(myContractInstance.isReferred(ethaddress));
+                if(isWhitelisted){
+                    infoObj.empty().html("Congratulation you are 1st level whitelisted!");
+                }else if(isReferred){
+                    infoObj.empty().html("Congratulation you are 2nd level whitelisted!");
+                }else{
+                    infoObj.empty().html("Sorry you are not whitelisted!");
                 }
-//            }else{
-//                infoObj.empty().html("The api interface returned is "+data.message);
-//            }
-//        });
+            } else {
+                infoObj.empty().html("Check the contract has error occured!");
+            }
+        }catch(e){
+            infoObj.empty().html("Sorry you are not whitelisted");
+        }
     });
 
     function formatresult(strResult, resulttype) {
@@ -2210,15 +2163,12 @@ Our platform puts the world to a next level of sustainable agriculture.</span></
             return toFixed(strResult);
         } else if (resulttype == 'string') {
             return strResult;
-            //return hex_to_ascii(strResult);
         } else if (resulttype == 'address') {
             if (strResult != '0x0000000000000000000000000000000000000000') {
                 return "<a href='/address/" + strResult + "' target='_blank'>" + strResult + "</a>";
             } else {
                 return strResult;
             }
-            //} else if (resulttype == 'bool') {
-            //    return Boolean(remove0x(strResult));
         } else {
             return strResult;
         }
