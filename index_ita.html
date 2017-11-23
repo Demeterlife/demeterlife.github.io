@@ -1289,6 +1289,9 @@
                                             <li id="menu-item-651" class="ubermenu-item-level-0">
                                                 <a class="a-link ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="/index_ita.html"><img src="static/imgs/flags/flat/32/Italy.png">&nbsp;Italiano</a>
                                             </li>
+                                            <li id="menu-item-655" class="ubermenu-item-level-0">
+                                                <a class="a-link ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="/index_cn.html"><img src="static/imgs/flags/flat/32/China.png">&nbsp;中文</a>
+                                            </li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -1625,9 +1628,9 @@ La nostra piattaforma punta a portare il  mondo ad un nuovo livello di sostenibi
                                             <div class="x-feature-box-graphic-outer circle"
                                                  style=" margin-right: 20px;">
                                                 <div class="x-feature-box-graphic-inner circle"
-                                                     style="width:150px;">
-                                                     <!-- <img class="circle" src="/static/uploads/2017/07/David_B.jpg" style="margin: 0 auto;"> -->
-                                                                                </div>
+                                                     style="width:150px;"><img class="circle"
+                                                                                    src="/static/uploads/2017/07/David_B.jpg"
+                                                                                    style="margin: 0 auto;"></div>
                                             </div>
                                         </div>
                                         <div class="x-feature-box-content"
@@ -1784,7 +1787,7 @@ La nostra piattaforma punta a portare il  mondo ad un nuovo livello di sostenibi
                                             <strong>Nome Token:</strong> DMT<br/>
                                             <strong>Criptovalute accettate per la ICO:</strong> ETH<br/>
                                             <strong>Contributo minimo</strong> 0.1 ETH<br/>
-                                            <strong>Bonus Corrente:</strong> 10% per whitelisted di primo livello e 5% per whitelisted di secondo livello<br/>
+                                            <strong>Bonus Corrente:</strong> 5% per whitelisted di primo livello e 2.5% per whitelisted di secondo livello<br/>
                                             <strong>Tasso di cambio:</strong> 1ETH = 2300DMT
                                         </div>
                                         <div>
@@ -2047,6 +2050,7 @@ La nostra piattaforma punta a portare il  mondo ad un nuovo livello di sostenibi
             t.focus()
         }
         else if (uschckbx.checked) {
+//            preregisterbtn.text = 'scusate ma cittadini Statunitensi non sono ammessi'
         }
     };
     jQuery("#US-checkbox2").click(function () {
@@ -2070,6 +2074,7 @@ La nostra piattaforma punta a portare il  mondo ad un nuovo livello di sostenibi
             jqForm.find('.clear').css('margin-left','55px');
             return false;
         }
+//        jqForm.find('.random-code').val(randomString(8));
         if(jqForm.find('.email').val()===''){
             return false;
         }else if (!/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(jqForm.find('.email').val())){
@@ -2115,6 +2120,8 @@ La nostra piattaforma punta a portare il  mondo ad un nuovo livello di sostenibi
     var version = web3.version.api;
     jQuery.getJSON('https://api.etherscan.io/api?module=account&action=balance&address=0xB8Eb17dfa4ec9A6457e4c8FB3D724C0Ed9ba4CF0&tag=latest&apikey=5C5QN8VHDEKTXJ7H7DZC4B2F5NB4CXWYNB', function (data) {
         var contractABI = "";
+        console.log("-----eth callback----");
+        console.log(data);
         x = new BigNumber(data.result);
         y=1000000000000000000;
         x2=x.dividedBy(y);
@@ -2144,10 +2151,10 @@ La nostra piattaforma punta a portare il  mondo ad un nuovo livello di sostenibi
                     infoObj.empty().html("Ci dispiace ma non sei whitelisted");
                 }
             } else {
-                infoObj.empty().html("Ci dispiace ma non sei whitelisted!");
+                infoObj.empty().html("Check the contract has error occured!");
             }
         }catch(e){
-            infoObj.empty().html("Ci dispiace ma non sei whitelisted");
+            infoObj.empty().html("Sorry you are not whitelisted");
         }
     });
 </script>
